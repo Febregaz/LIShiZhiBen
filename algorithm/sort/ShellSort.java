@@ -10,6 +10,7 @@ package sort;
  V1.0    20201229     LYZ      实现插入排序与希尔排序
  V1.1    20201231     LYZ      重看代码，补充看不懂的代码的注释
  V1.2    20201231     LYZ      希尔排序优化；利用break及时跳出while循环
+ V1.3    20210104     LYZ      继续补充代码注释
  *************************************************/
 public class ShellSort {
     public static void main(String[] args) {
@@ -22,7 +23,7 @@ public class ShellSort {
     public static void ShellSort(int[] simpleArray , int insertOrShell){
         //0为插入排序，其他为希尔排序
         int gap = insertOrShell == 0 ? 1 : simpleArray.length / 2;
-        //已排序好的队列的下标
+        //已排序好的队列的下标；相对与插入排序的依次减一位地多次比较，希尔排序每轮循环只需要比较一次
         int sortedIndex = 0;
         //当前用于比较的元素下标
         int compIndex = 0;
