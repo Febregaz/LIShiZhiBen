@@ -7,6 +7,7 @@ package sort;
  修订记录：
  版本       日期       作者       修订内容
  V1.0    20201229     LYZ      实现可以公用的数组功能
+ V1.1    20210105     LYZ      添加数组初始化函数
  ***************************************************/
 public class ArrayTool {
 
@@ -22,6 +23,11 @@ public class ArrayTool {
         int puppet = simpleArray[head];
         simpleArray[head] = simpleArray[tail];
         simpleArray[tail] = puppet;
+    }
+
+    public static int[] ArrayInit(){
+        int[] simpleArray = {4,66,42,76,22,5,44,33,67,21,1,2};
+        return simpleArray;
     }
 
 }
