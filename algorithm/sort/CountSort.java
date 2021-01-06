@@ -7,7 +7,8 @@ package sort;
  说明：本代码实现初级版本和优化版本（稳定排序，空间优化）
  修订记录：
  版本       日期       作者       修订内容
- V1.0    20201229     LYZ      实现计数排序
+ V1.0    20210106     LYZ      实现计数排序
+ V1.1    20210106     LYZ      补充注释，修正V1.0的日期
  ***************************************************/
 public class CountSort {
     public static void main(String[] args) {
@@ -77,7 +78,7 @@ public class CountSort {
         //求统计数组中各个元素的前缀和，以便得出各个元素在排序后的数组中的位置
         //countArr的索引
         int keyCount = 0;
-        //当前的前缀和
+        //当前的前缀和，这里可以看出是稳定排序
         int sumCount = 0;
         for ( keyCount = 0;keyCount < countArr.length;keyCount ++ ){
             sumCount += countArr[keyCount];
