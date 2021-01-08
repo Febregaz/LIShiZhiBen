@@ -10,9 +10,11 @@ import java.util.LinkedList;
  创建时间：7/1/2021
  作者：Aragami
  说明：元素具体落在哪个桶：（（当前元素）-（最小值））/ 桶容量
+      桶排序不是稳定排序，因为每个桶内的元素都会进行一次排序
  修订记录：
  版本       日期       作者       修订内容
  V1.0    20210107     LYZ      实现桶排序
+ V1.1    20210108     LYZ      添加说明
  ***************************************************/
 public class BucketSort {
     public static void main(String[] args) {

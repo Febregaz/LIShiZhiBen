@@ -4,11 +4,12 @@ package sort;
  版本：V1.0
  创建时间：6/1/2021
  作者：Aragami
- 说明：本代码实现初级版本和优化版本（稳定排序，空间优化）
+ 说明：本代码实现初级版本和优化版本（稳定排序，空间优化），是稳定排序
  修订记录：
  版本       日期       作者       修订内容
  V1.0    20210106     LYZ      实现计数排序
  V1.1    20210106     LYZ      补充注释，修正V1.0的日期
+ V1.2    20210108     LYZ      对从头开始遍历还是从尾开始遍历进行了解释，并修改相关的代码
  ***************************************************/
 public class CountSort {
     public static void main(String[] args) {
@@ -54,7 +55,7 @@ public class CountSort {
     }
 
     //优化版本
-    //减少countArr统计数组的空间开销
+    //减少countArr统计数组的空间开销以及稳定排序
     public static int[] Optimized_CountSort( int[] simpleArr , int arrLen ){
         int maxVal = simpleArr[0];
         int minVal = simpleArr[0];
@@ -85,8 +86,13 @@ public class CountSort {
             countArr[keyCount] = sumCount;
         }
         //用于接收排序好的元素的数组
+        //注意了，此处必须从数组尾部开始遍历到头部
+        //否则，前缀和的稳定排序作用就没有了
+        //因为，假设从头部开始，比如统计数组中某个元素的值为4，且该下标下有两个值，一前一后，一个排序第三位，另一个排在第四位
+        //那么刚开始得到的值为4，是后一个值的位置，而不是前一个值的位置。
+        //所以若从头部开始遍历，会认为前一个值的位置为4，导致不稳定排序
         int[] sortArr = new int[arrLen];
-        for ( keySim = 0;keySim < arrLen;keySim ++ ){
+        for ( keySim = arrLen - 1;keySim >= 0;keySim -- ){
             sortArr[countArr[simpleArr[keySim] - minVal] - 1] = simpleArr[keySim];
         }
         return sortArr;
