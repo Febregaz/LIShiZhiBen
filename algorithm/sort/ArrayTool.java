@@ -10,10 +10,19 @@ package sort;
  V1.1    20210105     LYZ      添加数组初始化函数
  V1.2    20210106     LYZ      添加数组初始化函数中数组的坐标注释
  V1.3    20210108     LYZ      添加初始化字符串数组函数
+ V1.4    20210108     LYZ      添加输出字符串数组函数
  ***************************************************/
 public class ArrayTool {
 
     public static void ArrayPrint( int[] simpleArray , int head , int tail ){
+        while (head <= tail){
+            System.out.print(simpleArray[head] + " ");
+            head += 1;
+        }
+        System.out.println("");
+    }
+
+    public static void  ArrayPrintStr( String[] simpleArray , int head , int tail ){
         while (head <= tail){
             System.out.print(simpleArray[head] + " ");
             head += 1;
