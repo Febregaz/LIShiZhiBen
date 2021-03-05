@@ -13,7 +13,7 @@ package sort;
       0～ N / 2 - 1 都是非叶子节点，即堆中所有三节点树中的根结点
  修订记录：
  版本       日期       作者       修订内容
- V1.0    20201229     LYZ      实现堆排序与选择排序，因为两者有相似之处
+ V1.0    20201229     LYZ      实现堆排序与选择排序，因为两者有相似之处，其实可以说堆排序是选择排序的优化版本
  ***************************************************/
 public class HeapSort {
     public static void main(String[] args) {
@@ -35,7 +35,7 @@ public class HeapSort {
         //擂台挑战者
         int challenger;
         while ( king < arrLen - 1 ){
-            //代表本届擂台赛的金牌
+            //代表本届擂台赛的金牌，默认从本届的一号选手开始
             gold = king;
             challenger = gold + 1;
             while ( challenger < arrLen ){
