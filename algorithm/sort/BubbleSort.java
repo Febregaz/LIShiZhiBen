@@ -11,7 +11,7 @@ package sort;
 public class BubbleSort {
     public static void main(String[] args) {
         int[] simpleArray = ArrayTool.ArrayInit();
-        BubbleSort( simpleArray , simpleArray.length - 1 );
+        BubbleSort( simpleArray , simpleArray.length );
         ArrayTool.ArrayPrint( simpleArray , 0 , simpleArray.length - 1 );
     }
 
@@ -19,10 +19,9 @@ public class BubbleSort {
         //用于从头坐标开始遍历整个数组
         int patrol = 0;
         //用于外部循环
-        int round = 0;
-        //-patrol是因为每次循环会找出最大的元素到最右边，下一次循环可以忽略它们
-        while ( round < arrLen ){
-            while ( patrol < arrLen - round ){
+        int round = 1;
+        while ( round <= arrLen - 1 ){ //最后一个元素没有比较对象了，所以少一次循环
+            while ( patrol <= arrLen - 1 - round ){ //-round是因为每次循环会找出最大的元素到最右边，下一次循环可以忽略它们
                 if ( simpleArray[patrol] > simpleArray[patrol + 1] ){
                     ArrayTool.ArrayValSwit( simpleArray , patrol , patrol + 1 );
                 }

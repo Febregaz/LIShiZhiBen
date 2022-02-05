@@ -36,6 +36,9 @@ public class ArrayTool {
         simpleArray[tail] = puppet;
     }
 
+    /*
+    作用：初始化一个默认数组
+     */
     public static int[] ArrayInit(){
                            /*0 1  2  3  4  5  6  7  8  9 10 11*/
         int[] simpleArray = {4,66,42,76,22,5,44,33,67,21,1,2};
@@ -46,5 +49,18 @@ public class ArrayTool {
         String[] simpleArray = {"qd","abc", "qwe","hhh","a","cws", "ope"};
         return simpleArray;
     }
+
+    public void test(){
+        try {
+
+        }catch ( Exception e ){
+            String i = "dfsd";
+            if ( 1 == 2 ){
+                
+            }
+        }
+    }
+
+
 
 }
